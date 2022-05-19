@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jol-player": "^3.0.0",
+    "react-icons": "^4.3.1"
+  }
+}

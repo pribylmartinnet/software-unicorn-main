@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Cats and Dogs",
+    "authorId": 3,
+    "tagIds": [
+      3,
+      4
+    ],
+    "token": "a9ed98da104da7aba18e438f21afc23facb8d6701b2f5e4bba32b9ac4bc1fef4",
+    "id": 1,
+    "path": "Storage/Videos/1.mp4"
+  },
+  {
+    "title": "Cats",
+    "authorId": 3,
+    "tagIds": [
+      3
+    ],
+    "token": "3d1803513dea9f1bd1398c894c86d10ad0be212079be46a92cf763a3c6a96f2a",
+    "id": 2,
+    "path": "Storage/Videos/2.mp4"
+  },
+  {
+    "title": "Dogs",
+    "authorId": 3,
+    "tagIds": [
+      4
+    ],
+    "token": "cadc6abcb18a8ec001d7c260fe68fd4084650f2f8db7b7ba5a54b6f22a9a6510",
+    "id": 3,
+    "path": "Storage/Videos/3.mp4"
+  },
+  {
+    "title": "Dogs",
+    "authorId": 3,
+    "tagIds": [
+      4
+    ],
+    "token": "cadc6abcb18a8ec001d7c260fe68fd4084650f2f8db7b7ba5a54b6f22a9a6510",
+    "id": 4,
+    "path": "Storage/Videos/4.mp4"
+  },
+  {
+    "title": "Dogs",
+    "authorId": 3,
+    "tagIds": [
+      4
+    ],
+    "token": "cadc6abcb18a8ec001d7c260fe68fd4084650f2f8db7b7ba5a54b6f22a9a6510",
+    "id": 5,
+    "path": "Storage/Videos/5.mp4"
+  },
+  {
+    "title": "Dogs",
+    "authorId": 3,
+    "tagIds": [
+      4
+    ],
+    "token": "cadc6abcb18a8ec001d7c260fe68fd4084650f2f8db7b7ba5a54b6f22a9a6510",
+    "id": 6,
+    "path": "Storage/Videos/6.mp4"
+  }]

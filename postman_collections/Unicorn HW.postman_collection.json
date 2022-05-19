@@ -1,0 +1,504 @@
+{
+	"info": {
+		"_postman_id": "7319ddd2-d622-41bb-9128-c027d489fb44",
+		"name": "Unicorn HW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "Upload Video File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"contentType": "Auto",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "a9ed98da104da7aba18e438f21afc23facb8d6701b2f5e4bba32b9ac4bc1fef4",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/pinguin/Desktop/bug.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dogs\",\n    \"authorId\": 3,\n    \"tagIds\": [4]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"token\": \"4e1579b6e0b07514801793ec1ac97e0f544c357c377a702c06d70d5bb2817b99\",\n    \"title\": \"funny dogs 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"token\": \"958530568f773be570f4a45bcc51ffffb7474596488914c5bba16147b26758a8aa62\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Video",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/get?id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Video File",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/get-file?filepath=Storage/Videos/1.mp4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"get-file"
+							],
+							"query": [
+								{
+									"key": "filepath",
+									"value": "Storage/Videos/1.mp4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Video List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order\": \"random\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/video/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"video",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Create Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dogs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"token\": \"0398aab01dfdbdf9ffef8a29f2b6696a456f648ca76c1fa7b555cb3c4d0f0c2b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tag",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag/get?id=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tag List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filter\": {\n        \"field\": \"title\",\n        \"operator\": \"eq\",\n        \"value\": \"Dogs\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tag/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tag",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Create Author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nickname\": \"Mary\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/author/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"token\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/author/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/author/get?id=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/author/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3,\n    \"token\": \"ff769956dc2fb6d032bb7e1ba7014d9db2f75fad1bf582a7efc5c3f0c534f93d\",\n    \"nickname\": \"Mary2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/author/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"author",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

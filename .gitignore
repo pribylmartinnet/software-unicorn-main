@@ -1,0 +1,11 @@
+Server/node_modules
+Server/build
+Server/npm-debug.log
+Server/.env
+Server/.DS_Store
+.idea
+Server/.idea
+Client/.idea
+
+# Project exclude paths
+/node_modules/
