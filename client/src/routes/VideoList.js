@@ -4,16 +4,16 @@ import {VideoTile} from "../bricks/VideoTile";
 import {Button, Row} from "react-bootstrap";
 import Icon from '@mdi/react'
 import { mdiPlus } from '@mdi/js'
-import {VideoForm} from "../bricks/AddVideoForm";
+import {AddVideoForm} from "../bricks/AddVideoForm";
 
 
 
 export const VideoList = () => {
 
 
-    const [videoList, setVideoList]=useState()
+    const [videoList, setVideoList]=useState([])
     const [formShown, setFormShown]=useState(false)
-    const [tagList, setTagList]=useState()
+
     console.log(videoList)
     useEffect(() => {
         // POST request using fetch inside useEffect React hook
@@ -63,7 +63,7 @@ export const VideoList = () => {
 
   return(
       <>
-          <VideoForm formShown={formShown} setFormShown={setFormShown} setVideoList={setVideoList} />
+          <AddVideoForm formShown={formShown} setFormShown={setFormShown} setVideoList={setVideoList} videoList={videoList}/>
       <Button variant="success" onClick={()=>setFormShown(true)}>
           <Icon path={mdiPlus} size={1} />
               Add video

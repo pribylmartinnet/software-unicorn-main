@@ -13,7 +13,7 @@ import JoLPlayer from "jol-player";
             <Card>
                 <JoLPlayer
                     option={{
-                        videoSrc:"/video/get-file?filepath=" + props.video.path,
+                        videoSrc:"/video/get-file?filepath=" + props.video.path, //getting video from the sever
                         width: 400,
                         height: 300,
                         pausePlacement: "center",
