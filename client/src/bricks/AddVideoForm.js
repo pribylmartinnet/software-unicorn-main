@@ -35,7 +35,8 @@ export const AddVideoForm = (props) => {
     async function uploadVideo() {
 
         const form_data = new FormData()
-        form_data.append("12", formDataVideo)
+        form_data.append("id", "2")
+        form_data.append("file", formDataVideo)
 
         await axios.post('/video/upload', form_data, {
              headers: { 

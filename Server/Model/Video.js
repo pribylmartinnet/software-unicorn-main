@@ -52,7 +52,8 @@ class Video extends AbstractModel {
       let dtoIn = {};
 
       busboy.on("field", function (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
-          dtoIn[fieldname] = val;
+        console.log(fieldname)  
+        dtoIn[fieldname] = val;
       });
 
       busboy.on("file", async (name, file, info) => {
@@ -74,6 +75,7 @@ class Video extends AbstractModel {
 
           try {
             console.log("OK3")
+                console.log(dtoIn)
               const video = await this.getEntity(dtoIn.id);
               if (!video) {
                 console.log("NOK3")
@@ -82,7 +84,7 @@ class Video extends AbstractModel {
               console.log("OK4")
               let saveTo = "Storage/Videos/" + dtoIn.id + ".mp4";
               // video.saveTo = path.join(process.cwd(), "Storage", "Videos", dtoIn.id + ".mp4");
-              await this._authorize.authorize(dtoIn.token, dtoIn.id);
+              //await this._authorize.authorize(dtoIn.token, dtoIn.id);
               let writeStream = fs.createWriteStream(path.resolve("./" + saveTo));
               await this.updateEntity(video);
               file.pipe(writeStream);
