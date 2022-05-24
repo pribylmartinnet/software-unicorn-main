@@ -56,29 +56,39 @@ class Video extends AbstractModel {
       });
 
       busboy.on("file", async (name, file, info) => {
-          const { mimeType } = info;
+        //console.log(name)
+        //console.log(info)
+        console.log("OK1")  
+        const { mimeType } = info;
           const valid = ajv.validate(Schemas.uploadFileSchema, dtoIn);
-
+          console.log("OK2")
           if (!valid) {
+            console.log("NOK1")
               return res.status(400).json({ error: ajv.errors });
           }
 
           if (mimeType !== "video/mp4") {
-              return res.status(400).json({ error: `Only supported mimeType is video/mp4` });
+            console.log("NOK2")  
+            return res.status(400).json({ error: `Only supported mimeType is video/mp4` });
           }
 
           try {
+            console.log("OK3")
               const video = await this.getEntity(dtoIn.id);
               if (!video) {
+                console.log("NOK3")
                   return res.status(400).json({error: `Video with code '${dtoIn.id}' doesn't exist.`});
               }
+              console.log("OK4")
               let saveTo = "Storage/Videos/" + dtoIn.id + ".mp4";
               // video.saveTo = path.join(process.cwd(), "Storage", "Videos", dtoIn.id + ".mp4");
               await this._authorize.authorize(dtoIn.token, dtoIn.id);
               let writeStream = fs.createWriteStream(path.resolve("./" + saveTo));
               await this.updateEntity(video);
               file.pipe(writeStream);
+              console.log("OK5")
           } catch (e) {
+            console.log("NOK4")
               res.status(500).send(e.message)
           }
       });

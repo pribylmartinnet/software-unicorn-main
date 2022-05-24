@@ -34,15 +34,16 @@ export const AddVideoForm = (props) => {
 
     async function uploadVideo() {
 
-        const form_data = new FormData();
-        // form_data.append(3);
-        // form_data.append();
+        const form_data = new FormData()
+        form_data.append("12", formDataVideo)
 
-        let res = await axios.post('/video/upload', form_data)
-            // { headers: form_data.getHeaders() });
-
-        let data = res.data;
-        console.log(data);
+        await axios.post('/video/upload', form_data, {
+             headers: { 
+                "Content-Type": "multipart/form-data" 
+            },
+        })
+        .then(response=>response)
+        .catch(error=>error)
     }
 
 

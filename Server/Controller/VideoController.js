@@ -7,7 +7,7 @@ const Video = new VideoModel();
 const busboy = require("busboy");
 
 router.post("/upload", async (req, res) => {
- console.log("okkk")
+ 
   let myBusboy = busboy({ headers: req.headers, limits: {files: 1} });
   await Video.upload(myBusboy, res)
   req.pipe(myBusboy);

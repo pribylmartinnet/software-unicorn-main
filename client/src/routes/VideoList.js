@@ -28,7 +28,7 @@ export const VideoList = () => {
             .then(data => setVideoList(data));
         fetch('/tag/list', requestOptions)
             .then(response => response.json())
-            .then(data => setTagList(data));
+            //.then(data => setTagList(data));
 // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);
 
